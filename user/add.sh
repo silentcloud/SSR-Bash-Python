@@ -34,11 +34,11 @@ fi
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 
 
-echo "你选择了添加用户"
+echo "这个是用来添加用户的"
 echo ""
-read -p "输入用户名： " uname
-read -p "输入端口： " uport
-read -p "输入密码： " upass
+read -p "起个用户名方便查询： " uname
+read -p "连接用端口号： " uport
+read -p "连接用密码： " upass
 echo ""
 echo "加密方式"
 echo '1.aes-192-cfb'
@@ -51,7 +51,7 @@ echo '7.chacha20'
 echo '8.chacha20-ietf'
 echo '9.salsa20'
 while :; do echo
-	read -p "输入加密方式： " um
+	read -p "输入加密方式（数字编号）： " um
 	if [[ ! $um =~ ^[1-9]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
@@ -212,7 +212,7 @@ fi
 
 
 #Run ShadowsocksR
-echo "用户添加成功！用户信息如下："
+echo "新用户信息如下："
 cd /usr/local/shadowsocksr
 python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut
 SSRPID=$(ps -ef|grep 'python server.py m' |grep -v grep |awk '{print $2}')
