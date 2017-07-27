@@ -5,7 +5,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 
 echo "测试区域，请勿随意使用"
-echo "1.更新SSR-Bsah"
+echo "1.更新SSR-Bsah(千万别更新)"
 echo "2.一键封禁BT下载，SPAM邮件流量（无法撤销）"
 
 while :; do echo
