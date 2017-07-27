@@ -60,7 +60,7 @@ fi
 #Install SSR and SSR-Bash
 cd /usr/local
 git clone https://github.com/zots0127/shadowsocksr.git
-git clone https://github.com/zots0127/SKKU-ONLY.git
+git clone https://github.com/zots0127/SSR-Bash-Python.git
 cd /usr/local/shadowsocksr
 bash initcfg.sh
 
@@ -139,7 +139,7 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/zots0127/SKKU-ONLY/master/ssr
+wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/zots0127/SSR-Bash-Python/master/ssr
 chmod +x /usr/local/bin/ssr
 
 #Modify ShadowsocksR API
