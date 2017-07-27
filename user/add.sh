@@ -34,14 +34,14 @@ fi
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 
 
-echo "这个是用来添加用户的"
+echo "你选择了添加用户"
 echo ""
-read -p "起个用户名方便查询： " uname
-read -p "连接用端口号： " uport
-read -p "连接用密码： " upass
+read -p "输入用户名： " uname
+read -p "输入端口： " uport
+read -p "输入密码： " upass
 echo ""
 echo "加密方式"
-echo '1.aes-192-cfb'
+echo '1.none'
 echo '2.aes-128-cfb'
 echo '3.aes-256-cfb'
 echo '4.aes-128-ctr'
@@ -51,7 +51,7 @@ echo '7.chacha20'
 echo '8.chacha20-ietf'
 echo '9.salsa20'
 while :; do echo
-	read -p "输入加密方式（数字编号）： " um
+	read -p "输入加密方式： " um
 	if [[ ! $um =~ ^[1-9]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
@@ -66,9 +66,10 @@ echo '2.auth_sha1_v4'
 echo '3.auth_aes128_md5'
 echo '4.auth_aes128_sha1'
 echo '5.verify_deflate'
+echo '6.auth_chain_a'
 while :; do echo
 	read -p "输入协议方式： " ux
-	if [[ ! $ux =~ ^[1-5]$ ]]; then
+	if [[ ! $ux =~ ^[1-6]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -115,7 +116,7 @@ fi
 
 
 if [[ $um == 1 ]];then
-	um1="aes-192-cfb"
+	um1="none"
 fi
 if [[ $um == 2 ]];then
 	um1="aes-128-cfb"
@@ -157,6 +158,11 @@ fi
 if [[ $ux == 5 ]];then
 	ux1="verify_deflate"
 fi
+
+if [[ $ux == 6 ]];then
+	ux1="auth_chain_a"
+fi
+
 if [[ $uo == 1 ]];then
 	uo1="plain"
 fi
@@ -187,6 +193,28 @@ while :; do echo
 	fi
 done
 
+while :; do echo
+	read -p "是否开启端口限速（y/n）： " iflimitspeed
+	if [[ ! $iflimitspeed =~ ^[y,n]$ ]]; then
+		echo "输入错误! 请输入y或者n!"
+	else
+		break
+	fi
+done
+
+if [[ $iflimitspeed == y ]]; then
+	while :; do echo
+		read -p "输入端口总限速(只需输入数字，单位：KB/s)： " us
+		if [[ "$us" =~ ^(-?|\+?)[0-9]+(\.?[0-9]+)?$ ]];then
+	   		break
+		else
+	   		echo 'Input Error!'
+		fi
+	done
+fi
+
+
+
 #Set Firewalls
 if [[ ${OS} =~ ^Ubuntu$|^Debian$ ]];then
 	iptables-restore < /etc/iptables.up.rules
@@ -212,9 +240,16 @@ fi
 
 
 #Run ShadowsocksR
-echo "新用户信息如下："
+echo "用户添加成功！用户信息如下："
 cd /usr/local/shadowsocksr
-python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut
+
+if [[ $iflimitspeed == y ]]; then
+	python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut -S $us
+else
+	python mujson_mgr.py -a -u $uname -p $uport -k $upass -m $um1 -O $ux1 -o $uo1 -t $ut
+fi
+
+
 SSRPID=$(ps -ef|grep 'python server.py m' |grep -v grep |awk '{print $2}')
 if [[ $SSRPID == "" ]]; then
 	
