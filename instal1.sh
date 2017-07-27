@@ -59,8 +59,8 @@ fi
 
 #Install SSR and SSR-Bash
 cd /usr/local
-git clone https://github.com/zots0127/shadowsocksrgit.git
-git clone https://github.com/zots0127/SSR-Bash-Python.git
+git clone https://github.com/zots0127/shadowsocksr.git
+git clone https://github.com/zots0127/SKKU-ONLY.git
 cd /usr/local/shadowsocksr
 bash initcfg.sh
 
@@ -139,7 +139,7 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/FunctionClub/SSR-Bash-Python/master/ssr
+wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/zots0127/SKKU-ONLY/master/ssr
 chmod +x /usr/local/bin/ssr
 
 #Modify ShadowsocksR API
@@ -150,7 +150,7 @@ bash /usr/local/SSR-Bash-Python/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
 echo 'Telegram Group: https://t.me/functionclub'
 echo 'Google Puls: https://plus.google.com/communities/113154644036958487268'
-echo 'Github: https://github.com/FunctionClub'
+echo 'Github: https://github.com/zots0127/SKKU-ONLY'
 echo 'QQ Group:277717865'
 echo 'Function Club 无限期停更说明'
 echo 'https://www.ixh.me/2017/05/function-club-stop/'
