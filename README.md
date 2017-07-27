@@ -30,7 +30,7 @@ ShadowsocksR多用户管理脚本（基于官方mujson版本）
 - 未设置开机启动
 
 ## 安装 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/zots0127/SSR-Bash-Python/master/install.sh && bash install.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/zots0127/SSR-Bash-Python/master/instal1.sh && bash instal1.sh
 
 ## 卸载 ##
     wget -N --no-check-certificate https://raw.githubusercontent.com/zots0127/SSR-Bash-Python/master/uninstall.sh && bash uninstall.sh
