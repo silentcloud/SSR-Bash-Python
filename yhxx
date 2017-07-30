@@ -1,0 +1,123 @@
+[
+    {
+        "d": 422177853,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "7777777",
+        "port": 10001,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 1988123,
+        "user": "10001"
+    },
+    {
+        "d": 64973817,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "7777777",
+        "port": 30070,
+        "protocol": "origin",
+        "speed_limit_per_user": 1024,
+        "transfer_enable": 10737418240,
+        "u": 3005884,
+        "user": "30007\b\b"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "7190956",
+        "port": 10002,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "jingnainai36"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "7021653",
+        "port": 10003,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "yanzirukimmy"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "caoziqiao0728",
+        "port": 10005,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "caoziqiao"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "ouyangyufei",
+        "port": 10006,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "ouyang"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "lihan",
+        "port": 10007,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "lihan"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "wanxiaokang",
+        "port": 10008,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "wanxiaokang"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "xuanzi",
+        "port": 10009,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "xuanzi"
+    },
+    {
+        "d": 0,
+        "enable": 1,
+        "method": "aes-256-cfb",
+        "obfs": "plain",
+        "passwd": "xuwei",
+        "port": 10010,
+        "protocol": "origin",
+        "transfer_enable": 107374182400,
+        "u": 0,
+        "user": "xuwei"
+    }
+]
